@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 Title="{Binding Model.Name}"
+			 x:Class="SampleApplication.ItemPage">
+	<ContentPage.ToolbarItems>
+    	<ToolbarItem Command="{Binding SaveItemCommand}"
+	                 Icon="ic_submit_dark"
+	                 Order="Primary"
+	                 Priority="0" />
+  	</ContentPage.ToolbarItems>
+
+	<ContentPage.Content>
+		<StackLayout>
+			<Label Text="Name"/>
+			<Entry Text="{Binding Model.Name}" Placeholder="Name"/>
+			<Label Text="Description"/>
+			<Editor Text="{Binding Model.Description}" />
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
