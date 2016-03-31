@@ -22,7 +22,7 @@ namespace Application.Droid
 				connection = new SQLiteAsyncConnection(path);
 
 			}
-			catch (SQLiteException ex)
+			catch (SQLiteException)
 			{
 				//Log ex.message
 			}

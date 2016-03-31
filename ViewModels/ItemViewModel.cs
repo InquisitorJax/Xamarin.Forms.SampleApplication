@@ -10,10 +10,12 @@ namespace SampleApplication
 	public class ItemViewModel : ViewModelBase
 	{
 		private readonly IRepository _repository;
+		private readonly IModelValidator<SampleItem> _validator;
 
-		public ItemViewModel (IRepository repository)
+		public ItemViewModel (IRepository repository, IModelValidator<SampleItem> validator)
 		{
 			_repository = repository;
+			_validator = validator;
 			SaveItemCommand = DelegateCommand.FromAsyncHandler (SaveItemAsync);
 		}
 
@@ -56,19 +58,27 @@ namespace SampleApplication
 
 		private async Task SaveItemAsync()
 		{
-			
-			var eventMessenger = CC.IoC.Resolve<IEventAggregator>();
+			Notification result = Notification.Success ();
 			ModelUpdateEvent updateEvent = _isNewModel ? ModelUpdateEvent.Created : ModelUpdateEvent.Updated;
-			var saveResult= await _repository.SaveSampleItemAsync(Model, updateEvent);
-			ModelUpdatedMessageResult<SampleItem> eventResult = new ModelUpdatedMessageResult<SampleItem>() { UpdatedModel = Model, UpdateEvent = updateEvent };
-			if (saveResult.IsValid ()) 
+
+			result = _validator.ValidateModel (Model);
+
+			if (result.IsValid ()) 
 			{
-				eventMessenger.GetEvent<ModelUpdatedMessageEvent<SampleItem>> ().Publish (eventResult);
+				var saveResult= await _repository.SaveSampleItemAsync(Model, updateEvent);
+				result.AddRange (saveResult);
+			}
+
+			if (result.IsValid ()) 
+			{
+				var eventMessenger = CC.IoC.Resolve<IEventAggregator>();
+				ModelUpdatedMessageResult<SampleItem> eventResult = new ModelUpdatedMessageResult<SampleItem>() { UpdatedModel = Model, UpdateEvent = updateEvent };
+				eventMessenger.GetEvent<ModelUpdatedMessageEvent<SampleItem>>().Publish (eventResult);
 				await Close ();
 			}
 			else
 			{
-				UserNotifier.ShowMessageAsync (saveResult.ToString (), "Save Failed");
+				await UserNotifier.ShowMessageAsync (result.ToString (), "Save Failed");
 			}
 		}
 

@@ -16,7 +16,7 @@ namespace SampleApplication
 
 			builder.RegisterType (typeof(XFormsUserNotifier)).As (typeof(IUserNotifier)).AsSelf();
 
-			builder.RegisterType(typeof(SampleItemValidator)).As (typeof(IModelValidator<SampleItem>)).AsSelf();
+			builder.RegisterType<SampleItemValidator>().As<IModelValidator<SampleItem>>().AsSelf();
 
 			builder.RegisterType<MainViewModel>().Keyed<IViewModel>(Constants.Navigation.MainPage);
 			builder.RegisterType<ItemViewModel>().Keyed<IViewModel>(Constants.Navigation.ItemPage);
