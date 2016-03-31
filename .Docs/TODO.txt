@@ -1,0 +1,7 @@
+﻿Add NLog Logging
+Add NGraphics 
+Add LabelEdit Control with validation binding via behaviour
+Add Material Styling for Android
+Add iOS Project
+Add UWP Project
+Add Custom Icon and App Name

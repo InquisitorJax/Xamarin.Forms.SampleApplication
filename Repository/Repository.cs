@@ -51,18 +51,16 @@ namespace SampleApplication
 		public async Task Initialize ()
 		{
 
-			try 
+			if (_isInitialized)
+				return;
+			_isInitialized = true;
+
+			var connectionFactory = CC.IoC.Resolve<IDatabaseConnectionFactory>();
+			var connectionResult = connectionFactory.Execute(null);
+			if (connectionResult.IsValid())
 			{
-				if (_isInitialized)
-					return;
-				_isInitialized = true;
-				var connectionFactory = CC.IoC.Resolve<IDatabaseConnectionFactory>();
-				_database = connectionFactory.GetConnection();
+				_database = connectionResult.Connection;
 				await _database.CreateTableAsync<SampleItem>();			
-			} 
-			catch (SQLiteException) 
-			{
-				///report error	
 			}
 		}
 

@@ -4,10 +4,16 @@ using SQLite;
 
 namespace SampleApplication
 {
-	public interface IDatabaseConnectionFactory
+
+
+	public interface IDatabaseConnectionFactory : ILogicCommand<object, DatabaseConnectioFactoryResult>
 	{
 		//https://developer.xamarin.com/guides/xamarin-forms/working-with/databases/
-		SQLiteAsyncConnection GetConnection();
+	}
+
+	public class DatabaseConnectioFactoryResult : CommandResult
+	{
+		public SQLiteAsyncConnection Connection { get; set; }
 	}
 }
 
