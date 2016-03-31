@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include=".Docs\TODO.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -110,6 +111,7 @@
     <Folder Include="Commands\" />
     <Folder Include="Repository\" />
     <Folder Include="Controls\" />
+    <Folder Include=".Docs\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">
