@@ -16,7 +16,9 @@
         <RowDefinition Height="Auto" />
         <RowDefinition Height="*" />
       </Grid.RowDefinitions>
-      <Label HorizontalOptions="CenterAndExpand" Text="Sample Items" />
+      <StackLayout>
+        <Label HorizontalOptions="CenterAndExpand" Text="{Binding Title}" />
+      </StackLayout>
       <local:ListView x:Name="_listView"
                       Grid.Row="1"
                       IsPullToRefreshEnabled="True"

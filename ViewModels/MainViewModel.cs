@@ -1,9 +1,9 @@
-﻿using Prism.Events;
+﻿using Prism.Commands;
+using Prism.Events;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Prism.Commands;
-using System.Collections.Generic;
 
 namespace SampleApplication
 {
@@ -17,26 +17,19 @@ namespace SampleApplication
 
         private ObservableCollection<SampleItem> _sampleItems;
 
-		public ICommand FetchSampleItemsCommand { get; private set;}
-		public ICommand OpenSelectedSampleItemCommand { get; private set;}
-		public ICommand CreateSampleItemNavigationCommand { get; private set;}
+        private SampleItem _selectedSampleItem;
 
         public MainViewModel(IRepository repository)
         {
             _repository = repository;
-			FetchSampleItemsCommand = DelegateCommand.FromAsyncHandler (FetchSampleItemsAsync);
-			OpenSelectedSampleItemCommand = DelegateCommand.FromAsyncHandler (OpenSelectedSampleItemAsync);
-			CreateSampleItemNavigationCommand = DelegateCommand.FromAsyncHandler (CreateSampleItemNavigateAsync);
+            FetchSampleItemsCommand = DelegateCommand.FromAsyncHandler(FetchSampleItemsAsync);
+            OpenSelectedSampleItemCommand = DelegateCommand.FromAsyncHandler(OpenSelectedSampleItemAsync);
+            CreateSampleItemNavigationCommand = DelegateCommand.FromAsyncHandler(CreateSampleItemNavigateAsync);
+            Title = "Sample Application For Xamarin Forms";
         }
 
-
-		private SampleItem _selectedSampleItem;
-
-		public SampleItem SelectedSampleItem
-		{
-			get {return _selectedSampleItem;}
-			set { SetProperty (ref _selectedSampleItem, value);}
-		}
+        public ICommand CreateSampleItemNavigationCommand { get; private set; }
+        public ICommand FetchSampleItemsCommand { get; private set; }
 
         public bool ListRefreshing
         {
@@ -44,11 +37,21 @@ namespace SampleApplication
             set { SetProperty(ref _listRefreshing, value); }
         }
 
+        public ICommand OpenSelectedSampleItemCommand { get; private set; }
+
         public ObservableCollection<SampleItem> SampleItems
         {
             get { return _sampleItems; }
             set { SetProperty(ref _sampleItems, value); }
         }
+
+        public SampleItem SelectedSampleItem
+        {
+            get { return _selectedSampleItem; }
+            set { SetProperty(ref _selectedSampleItem, value); }
+        }
+
+        public string Title { get; set; }
 
         public override void Closing()
         {
@@ -61,23 +64,10 @@ namespace SampleApplication
             await FetchSampleItemsAsync();
         }
 
-		private async Task OpenSelectedSampleItemAsync()
-		{
-			if (SelectedSampleItem != null)
-			{
-				Dictionary<string, string> args = new Dictionary<string, string>
-				{
-					{Constants.Parameters.Id, SelectedSampleItem.Id}
-				};
-
-				await Navigation.NavigateAsync(Constants.Navigation.ItemPage, args);
-			}
-		}
-
-		private async Task CreateSampleItemNavigateAsync()
-		{
-			await Navigation.NavigateAsync(Constants.Navigation.ItemPage);
-		}
+        private async Task CreateSampleItemNavigateAsync()
+        {
+            await Navigation.NavigateAsync(Constants.Navigation.ItemPage);
+        }
 
         private async Task FetchSampleItemsAsync()
         {
@@ -108,6 +98,19 @@ namespace SampleApplication
         private void OnSampleItemUpdated(ModelUpdatedMessageResult<SampleItem> updateResult)
         {
             SampleItems.UpdateCollection(updateResult.UpdatedModel, updateResult.UpdateEvent);
+        }
+
+        private async Task OpenSelectedSampleItemAsync()
+        {
+            if (SelectedSampleItem != null)
+            {
+                Dictionary<string, string> args = new Dictionary<string, string>
+                {
+                    {Constants.Parameters.Id, SelectedSampleItem.Id}
+                };
+
+                await Navigation.NavigateAsync(Constants.Navigation.ItemPage, args);
+            }
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using SampleApplication;
-using SQLite;
+﻿using SQLite;
 using System.IO;
+using Windows.Storage;
 
-namespace Application.Droid
+namespace SampleApplication.Windows
 {
-    public class AndroidDatabaseConnectionFactory : LogicCommand<object, DatabaseConnectioFactoryResult>, IDatabaseConnectionFactory
+    public class WindowsDatabaseConnectionFactory : LogicCommand<object, DatabaseConnectioFactoryResult>, IDatabaseConnectionFactory
     {
         #region implemented abstract members of LogicCommand
 
@@ -13,7 +13,7 @@ namespace Application.Droid
             DatabaseConnectioFactoryResult result = new DatabaseConnectioFactoryResult();
 
             const string dbFileName = "SampleDatabse.db3";
-            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal); // Documents folder
+            string documentsPath = ApplicationData.Current.LocalFolder.Path;
             string path = Path.Combine(documentsPath, dbFileName);
 
             try
