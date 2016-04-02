@@ -1,37 +1,37 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-			 xmlns:local="clr-namespace:SampleApplication"
-			 x:Class="SampleApplication.MainPage">
-	<ContentPage.ToolbarItems>
-    	<ToolbarItem Command="{Binding CreateSampleItemNavigationCommand}"
-	                 Icon="ic_insert_dark"
-	                 Order="Primary"
-	                 Priority="0" />
-  	</ContentPage.ToolbarItems>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="SampleApplication.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SampleApplication">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Command="{Binding CreateSampleItemNavigationCommand}"
+                 Icon="ic_insert_dark"
+                 Order="Primary"
+                 Priority="0" />
+  </ContentPage.ToolbarItems>
 
-	<ContentPage.Content>
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-			<Label Text="Sample Items" HorizontalOptions="CenterAndExpand"/>
-			<local:ListView x:Name="_listView"
-		      			CachingStrategy="RecycleElement"
-		                IsPullToRefreshEnabled="True"
-		                IsRefreshing="{Binding ListRefreshing}"
-		                ItemTapCommand="{Binding OpenSelectedSampleItemCommand}"
-		                ItemsSource="{Binding SampleItems}"
-		                SelectedItem="{Binding SelectedSampleItem, Mode=TwoWay}"
-		                RefreshCommand="{Binding FetchSampleItemsCommand}"
-		                Grid.Row="1">
-		                <local:ListView.ItemTemplate>
-					          <DataTemplate> 
-					          	<TextCell Text="{Binding Name}" Detail="{Binding Description}" />					      								          	
-					          </DataTemplate>
-	        			</local:ListView.ItemTemplate>
-		         </local:ListView>
-	</Grid>
-	</ContentPage.Content>
+  <ContentPage.Content>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Label HorizontalOptions="CenterAndExpand" Text="Sample Items" />
+      <local:ListView x:Name="_listView"
+                      Grid.Row="1"
+                      IsPullToRefreshEnabled="True"
+                      IsRefreshing="{Binding ListRefreshing}"
+                      ItemTapCommand="{Binding OpenSelectedSampleItemCommand}"
+                      ItemsSource="{Binding SampleItems}"
+                      RefreshCommand="{Binding FetchSampleItemsCommand}"
+                      SelectedItem="{Binding SelectedSampleItem,
+                                                   Mode=TwoWay}">
+        <local:ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Detail="{Binding Description}" Text="{Binding Name}" />
+          </DataTemplate>
+        </local:ListView.ItemTemplate>
+      </local:ListView>
+    </Grid>
+  </ContentPage.Content>
 </ContentPage>
