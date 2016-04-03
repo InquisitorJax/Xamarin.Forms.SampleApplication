@@ -1,27 +1,20 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Application.Droid;
 
 namespace SampleApplication
 {
-	[Activity (Label = "Application.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
-	{
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
+    [Activity(Label = "Application.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
 
-			global::Xamarin.Forms.Forms.Init (this, bundle);
+            global::Xamarin.Forms.Forms.Init(this, bundle);
 
-			LoadApplication (new App (new IocAndroidModule()));
-		}
-	}
+            LoadApplication(new App(new IocAndroidModule()));
+        }
+    }
 }
-

@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using SampleApplication;
-using System;
+using SampleApplication.Core;
 
 namespace Application.Droid
 {
@@ -11,6 +11,7 @@ namespace Application.Droid
             base.Load(builder);
 
             builder.RegisterType<AndroidDatabaseConnectionFactory>().As<IDatabaseConnectionFactory>().AsSelf();
+            builder.RegisterType<AndroidExceptionManager>().As<IPlatformExceptionManager>().AsSelf().SingleInstance();
         }
     }
 }
