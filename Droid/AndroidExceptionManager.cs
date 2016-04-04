@@ -1,5 +1,6 @@
 using Android.App;
 using Android.Runtime;
+using SampleApplication;
 using SampleApplication.Core;
 using System;
 using System.IO;
@@ -24,10 +25,8 @@ namespace Application.Droid
         {
             //TODO: report crash to analytics service
 #if DEBUG
-            return Task.Run(() =>
-            {
-                ShowCrashReportDebug();
-            });
+            ShowCrashReportDebug();
+            return Task.FromResult(default(int));
 #endif
         }
 
@@ -73,7 +72,7 @@ namespace Application.Droid
             }
 
             var errorText = File.ReadAllText(errorFilePath);
-            new AlertDialog.Builder(Android.App.Application.Context)
+            new AlertDialog.Builder(MainActivity.AppContext)
                 .SetPositiveButton("Clear", (sender, args) =>
                 {
                     File.Delete(errorFilePath);
