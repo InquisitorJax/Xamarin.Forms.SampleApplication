@@ -1,7 +1,7 @@
 using Android.App;
 using Android.Runtime;
+using Core;
 using SampleApplication;
-using SampleApplication.Core;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -14,8 +14,6 @@ namespace Application.Droid
 
         public AndroidExceptionManager()
         {
-            //mostly from https://forums.xamarin.com/discussion/13784/catching-global-exceptions-in-android
-
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
             TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
             AndroidEnvironment.UnhandledExceptionRaiser += HandleAndroidException;

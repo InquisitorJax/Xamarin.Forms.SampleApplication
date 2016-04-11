@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Core;
 
 using Xamarin.Forms;
 
 namespace SampleApplication
 {
-	public partial class MainPage : ContentPage, IView
-	{
-		public MainPage ()
-		{
-			InitializeComponent ();
+    public partial class MainPage : ContentPage, IView
+    {
+        public MainPage()
+        {
+            InitializeComponent();
 
-			Title = "Sample Xamarin Forms App";
-		}
+            Title = "Sample Xamarin Forms App";
+        }
 
-		#region IView implementation
+        #region IView implementation
 
-		public IViewModel ViewModel { get; set; }
+        public IViewModel ViewModel { get; set; }
 
-		#endregion
-	}
+        #endregion IView implementation
+    }
 }
-

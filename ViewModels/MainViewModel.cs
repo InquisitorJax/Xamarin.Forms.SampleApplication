@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Core;
+using Prism.Commands;
 using Prism.Events;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

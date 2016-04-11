@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace SampleApplication
+namespace Core
 {
     public static class ObservableCollectionExtensions
     {

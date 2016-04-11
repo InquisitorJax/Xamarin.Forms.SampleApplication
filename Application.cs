@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using SampleApplication.Core;
+using Core;
 using System.Collections.Generic;
 
 namespace SampleApplication
@@ -41,6 +41,7 @@ namespace SampleApplication
             //IOC
             List<Module> modules = new List<Module>
             {
+                new IocSharedModule(),
                 new IocApplicationModule(),
                 platformModule
             };

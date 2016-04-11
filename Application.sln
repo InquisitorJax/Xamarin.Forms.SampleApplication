@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application.csproj", "{26E89A3B-9852-4A18-96CC-1D5881FADAA1}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests", "Application.Tests\Application.Tests.csproj", "{7D15D603-B0EB-477F-A56E-6C3A9E26442C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Windows", "Windows\Application.Windows.csproj", "{CBF05666-23A5-4262-80CE-64ABC6633A20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XForms.Shared", "AllApplications.Shared\XForms.Shared.csproj", "{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,6 +120,22 @@ Global
 		{CBF05666-23A5-4262-80CE-64ABC6633A20}.Release|x86.ActiveCfg = Release|x86
 		{CBF05666-23A5-4262-80CE-64ABC6633A20}.Release|x86.Build.0 = Release|x86
 		{CBF05666-23A5-4262-80CE-64ABC6633A20}.Release|x86.Deploy.0 = Release|x86
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|ARM.Build.0 = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|x64.Build.0 = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|ARM.Build.0 = Release|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|x64.ActiveCfg = Release|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|x64.Build.0 = Release|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E590FAB-76C0-4EC2-9B90-FA90C9C2B73D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

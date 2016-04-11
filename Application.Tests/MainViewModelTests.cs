@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Core;
+using Moq;
 using NUnit.Framework;
 using SampleApplication;
 using System.Collections.Generic;

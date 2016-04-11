@@ -2,6 +2,7 @@
 <ContentPage x:Class="SampleApplication.MainPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:core="clr-namespace:Core;assembly=XForms.Shared"
              xmlns:local="clr-namespace:SampleApplication">
   <ContentPage.ToolbarItems>
     <ToolbarItem Command="{Binding CreateSampleItemNavigationCommand}"
@@ -19,21 +20,21 @@
       <StackLayout>
         <Label HorizontalOptions="CenterAndExpand" Text="{Binding Title}" />
       </StackLayout>
-      <local:ListView x:Name="_listView"
-                      Grid.Row="1"
-                      IsPullToRefreshEnabled="True"
-                      IsRefreshing="{Binding ListRefreshing}"
-                      ItemTapCommand="{Binding OpenSelectedSampleItemCommand}"
-                      ItemsSource="{Binding SampleItems}"
-                      RefreshCommand="{Binding FetchSampleItemsCommand}"
-                      SelectedItem="{Binding SelectedSampleItem,
-                                                   Mode=TwoWay}">
-        <local:ListView.ItemTemplate>
+      <core:ListView x:Name="_listView"
+                     Grid.Row="1"
+                     IsPullToRefreshEnabled="True"
+                     IsRefreshing="{Binding ListRefreshing}"
+                     ItemTapCommand="{Binding OpenSelectedSampleItemCommand}"
+                     ItemsSource="{Binding SampleItems}"
+                     RefreshCommand="{Binding FetchSampleItemsCommand}"
+                     SelectedItem="{Binding SelectedSampleItem,
+                                                  Mode=TwoWay}">
+        <core:ListView.ItemTemplate>
           <DataTemplate>
             <TextCell Detail="{Binding Description}" Text="{Binding Name}" />
           </DataTemplate>
-        </local:ListView.ItemTemplate>
-      </local:ListView>
+        </core:ListView.ItemTemplate>
+      </core:ListView>
     </Grid>
   </ContentPage.Content>
 </ContentPage>

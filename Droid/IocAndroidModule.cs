@@ -1,6 +1,5 @@
 ﻿using Autofac;
-using SampleApplication;
-using SampleApplication.Core;
+using Core;
 
 namespace Application.Droid
 {

@@ -1,4 +1,4 @@
-﻿using SampleApplication;
+﻿using Core;
 using SQLite;
 using System.IO;
 

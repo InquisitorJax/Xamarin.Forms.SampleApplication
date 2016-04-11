@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Core;
+using SQLite;
 using System.IO;
 using Windows.Storage;
 
