@@ -2,11 +2,11 @@
   "dependencies": {
     "Autofac": "3.5.2",
     "FluentValidation": "6.2.1",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
     "Prism.Core": "6.1.0",
     "sqlite-net-pcl": "1.1.1",
     "Toasts.Forms.Plugin": "2.0.3",
-    "Xamarin.Forms": "2.1.0.6529"
+    "Xamarin.Forms": "2.2.0.31"
   },
   "frameworks": {
     "uap10.0": {}
