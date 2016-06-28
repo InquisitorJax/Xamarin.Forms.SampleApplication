@@ -7,7 +7,7 @@ Example of typical Xamarin Forms application. Project to illustrate basic mobile
 Provider ViewModelBase which exposes INotifyPropertyChanged necessary for Xaml Binding 
 
 ####Resource Navigation API
-This allows the viewmodels to be moer loosely coupled. 
+This allows the viewmodels to be more loosely coupled. 
 Navigation is done via logical string values and parameters
 
 ####Dependency Injection / Inversion of Control
