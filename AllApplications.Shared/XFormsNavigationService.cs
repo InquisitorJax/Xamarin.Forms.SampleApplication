@@ -10,6 +10,7 @@ namespace Core
     {
         private Page _currentPage;
 
+        private bool _isSuspended;
         private Dictionary<Page, bool> _pageInfoList;
 
         private Stack<IView> _viewStack;
@@ -46,6 +47,9 @@ namespace Core
 
         public async Task GoBack()
         {
+            if (_isSuspended)
+                return;
+
             await PopCurrentPageAsync();
             if (_viewStack.Count > 0)
                 _currentPage = (Page)_viewStack.Peek();
@@ -53,6 +57,9 @@ namespace Core
 
         public async Task NavigateAsync(string destination, Dictionary<string, string> args = null, bool modal = false, bool forgetCurrentPage = false)
         {
+            if (_isSuspended)
+                return;
+
             IView view = ResolveView(destination);
 
             await ShowViewAsync(view, modal, forgetCurrentPage); //Show View first so that showing doesn't wait for state initialization
@@ -65,6 +72,10 @@ namespace Core
 
         public async Task ResumeAsync()
         {
+            if (!_isSuspended)
+                return;
+
+            _isSuspended = false;
             if (CurrentView != null)
             {
                 await CurrentView.ViewModel.LoadStateAsync();
@@ -73,6 +84,10 @@ namespace Core
 
         public async Task SuspendAsync()
         {
+            if (_isSuspended)
+                return;
+
+            _isSuspended = true;
             if (CurrentView != null)
             {
                 await CurrentView.ViewModel.SaveStateAsync();
@@ -81,6 +96,11 @@ namespace Core
 
         private void Page_Disappearing(object sender, EventArgs e)
         {
+            //NOTE: this event can also be fired from events like launching the camera - in which case the camera launch code must manually
+            //...   call Navigation.SuspendAsync() so that the view isn't unintentionally removed from the stack
+            if (_isSuspended)
+                return;
+
             IView view = sender as IView;
 
             if (view != null)
