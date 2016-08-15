@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Application.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("SampleApplication.Droid.Resource", IsApplication=true)]
 
-namespace Application.Droid
+namespace SampleApplication.Droid
 {
 	
 	
@@ -26,17 +26,17 @@ namespace Application.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Plugin.Toasts.Resource.Drawable.error = global::Application.Droid.Resource.Drawable.error;
-			global::Plugin.Toasts.Resource.Drawable.info = global::Application.Droid.Resource.Drawable.info;
-			global::Plugin.Toasts.Resource.Drawable.success = global::Application.Droid.Resource.Drawable.success;
-			global::Plugin.Toasts.Resource.Drawable.warning = global::Application.Droid.Resource.Drawable.warning;
-			global::Plugin.Toasts.Resource.Id.desc = global::Application.Droid.Resource.Id.desc;
-			global::Plugin.Toasts.Resource.Id.image = global::Application.Droid.Resource.Id.image;
-			global::Plugin.Toasts.Resource.Id.title = global::Application.Droid.Resource.Id.title;
-			global::Plugin.Toasts.Resource.Layout.crouton = global::Application.Droid.Resource.Layout.crouton;
-			global::Plugin.Toasts.Resource.String.ApplicationName = global::Application.Droid.Resource.String.ApplicationName;
-			global::Plugin.Toasts.Resource.String.Hello = global::Application.Droid.Resource.String.Hello;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Application.Droid.Resource.Attribute.actionBarSize;
+			global::Plugin.Toasts.Resource.Drawable.error = global::SampleApplication.Droid.Resource.Drawable.error;
+			global::Plugin.Toasts.Resource.Drawable.info = global::SampleApplication.Droid.Resource.Drawable.info;
+			global::Plugin.Toasts.Resource.Drawable.success = global::SampleApplication.Droid.Resource.Drawable.success;
+			global::Plugin.Toasts.Resource.Drawable.warning = global::SampleApplication.Droid.Resource.Drawable.warning;
+			global::Plugin.Toasts.Resource.Id.desc = global::SampleApplication.Droid.Resource.Id.desc;
+			global::Plugin.Toasts.Resource.Id.image = global::SampleApplication.Droid.Resource.Id.image;
+			global::Plugin.Toasts.Resource.Id.title = global::SampleApplication.Droid.Resource.Id.title;
+			global::Plugin.Toasts.Resource.Layout.crouton = global::SampleApplication.Droid.Resource.Layout.crouton;
+			global::Plugin.Toasts.Resource.String.ApplicationName = global::SampleApplication.Droid.Resource.String.ApplicationName;
+			global::Plugin.Toasts.Resource.String.Hello = global::SampleApplication.Droid.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SampleApplication.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
@@ -1101,32 +1101,32 @@ namespace Application.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0b0048
-			public const int abc_background_cache_hint_selector_material_dark = 2131427400;
+			// aapt resource value: 0x7f0b004c
+			public const int abc_background_cache_hint_selector_material_dark = 2131427404;
 			
-			// aapt resource value: 0x7f0b0049
-			public const int abc_background_cache_hint_selector_material_light = 2131427401;
+			// aapt resource value: 0x7f0b004d
+			public const int abc_background_cache_hint_selector_material_light = 2131427405;
 			
-			// aapt resource value: 0x7f0b004a
-			public const int abc_color_highlight_material = 2131427402;
+			// aapt resource value: 0x7f0b004e
+			public const int abc_color_highlight_material = 2131427406;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int abc_input_method_navigation_guard = 2131427332;
 			
-			// aapt resource value: 0x7f0b004b
-			public const int abc_primary_text_disable_only_material_dark = 2131427403;
-			
-			// aapt resource value: 0x7f0b004c
-			public const int abc_primary_text_disable_only_material_light = 2131427404;
-			
-			// aapt resource value: 0x7f0b004d
-			public const int abc_primary_text_material_dark = 2131427405;
-			
-			// aapt resource value: 0x7f0b004e
-			public const int abc_primary_text_material_light = 2131427406;
-			
 			// aapt resource value: 0x7f0b004f
-			public const int abc_search_url_text = 2131427407;
+			public const int abc_primary_text_disable_only_material_dark = 2131427407;
+			
+			// aapt resource value: 0x7f0b0050
+			public const int abc_primary_text_disable_only_material_light = 2131427408;
+			
+			// aapt resource value: 0x7f0b0051
+			public const int abc_primary_text_material_dark = 2131427409;
+			
+			// aapt resource value: 0x7f0b0052
+			public const int abc_primary_text_material_light = 2131427410;
+			
+			// aapt resource value: 0x7f0b0053
+			public const int abc_search_url_text = 2131427411;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int abc_search_url_text_normal = 2131427333;
@@ -1137,11 +1137,14 @@ namespace Application.Droid
 			// aapt resource value: 0x7f0b0007
 			public const int abc_search_url_text_selected = 2131427335;
 			
-			// aapt resource value: 0x7f0b0050
-			public const int abc_secondary_text_material_dark = 2131427408;
+			// aapt resource value: 0x7f0b0054
+			public const int abc_secondary_text_material_dark = 2131427412;
 			
-			// aapt resource value: 0x7f0b0051
-			public const int abc_secondary_text_material_light = 2131427409;
+			// aapt resource value: 0x7f0b0055
+			public const int abc_secondary_text_material_light = 2131427413;
+			
+			// aapt resource value: 0x7f0b004a
+			public const int accent = 2131427402;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int accent_material_dark = 2131427336;
@@ -1293,6 +1296,12 @@ namespace Application.Droid
 			// aapt resource value: 0x7f0b002b
 			public const int material_grey_900 = 2131427371;
 			
+			// aapt resource value: 0x7f0b0048
+			public const int primary = 2131427400;
+			
+			// aapt resource value: 0x7f0b0049
+			public const int primaryDark = 2131427401;
+			
 			// aapt resource value: 0x7f0b002c
 			public const int primary_dark_material_dark = 2131427372;
 			
@@ -1341,17 +1350,20 @@ namespace Application.Droid
 			// aapt resource value: 0x7f0b003b
 			public const int switch_thumb_disabled_material_light = 2131427387;
 			
-			// aapt resource value: 0x7f0b0052
-			public const int switch_thumb_material_dark = 2131427410;
+			// aapt resource value: 0x7f0b0056
+			public const int switch_thumb_material_dark = 2131427414;
 			
-			// aapt resource value: 0x7f0b0053
-			public const int switch_thumb_material_light = 2131427411;
+			// aapt resource value: 0x7f0b0057
+			public const int switch_thumb_material_light = 2131427415;
 			
 			// aapt resource value: 0x7f0b003c
 			public const int switch_thumb_normal_material_dark = 2131427388;
 			
 			// aapt resource value: 0x7f0b003d
 			public const int switch_thumb_normal_material_light = 2131427389;
+			
+			// aapt resource value: 0x7f0b004b
+			public const int window_background = 2131427403;
 			
 			static Color()
 			{
@@ -2622,6 +2634,9 @@ namespace Application.Droid
 			// aapt resource value: 0x7f070013
 			public const int showTitle = 2131165203;
 			
+			// aapt resource value: 0x7f070099
+			public const int sliding_tabs = 2131165337;
+			
 			// aapt resource value: 0x7f07006d
 			public const int snackbar_action = 2131165293;
 			
@@ -2675,6 +2690,9 @@ namespace Application.Droid
 			
 			// aapt resource value: 0x7f070048
 			public const int title_template = 2131165256;
+			
+			// aapt resource value: 0x7f07009a
+			public const int toolbar = 2131165338;
 			
 			// aapt resource value: 0x7f070032
 			public const int top = 2131165234;
@@ -2945,6 +2963,12 @@ namespace Application.Droid
 			
 			// aapt resource value: 0x7f030037
 			public const int support_simple_spinner_dropdown_item = 2130903095;
+			
+			// aapt resource value: 0x7f030038
+			public const int tabs = 2130903096;
+			
+			// aapt resource value: 0x7f030039
+			public const int toolbar = 2130903097;
 			
 			static Layout()
 			{
@@ -3547,6 +3571,12 @@ namespace Application.Droid
 			
 			// aapt resource value: 0x7f0a001a
 			public const int CardView_Light = 2131361818;
+			
+			// aapt resource value: 0x7f0a0172
+			public const int MyTheme = 2131362162;
+			
+			// aapt resource value: 0x7f0a0173
+			public const int MyTheme_Base = 2131362163;
 			
 			// aapt resource value: 0x7f0a0032
 			public const int Platform_AppCompat = 2131361842;

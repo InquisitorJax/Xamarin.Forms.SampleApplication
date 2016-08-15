@@ -3,11 +3,15 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Application.Droid;
+using Xamarin.Forms.Platform.Android;
 
 namespace SampleApplication
 {
-    [Activity(Label = "Application.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    [Activity(Label = "Application.Droid", 
+	          Icon = "@drawable/icon", 
+	          MainLauncher = true, 
+	          ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
 		//TODO: replace with Forms.Context
         private static Context _appContext;
@@ -19,6 +23,9 @@ namespace SampleApplication
 
         protected override void OnCreate(Bundle bundle)
         {
+			FormsAppCompatActivity.ToolbarResource = Droid.Resource.Layout.toolbar;
+			FormsAppCompatActivity.TabLayoutResource = Droid.Resource.Layout.tabs;
+
             base.OnCreate(bundle);
 
             _appContext = this;

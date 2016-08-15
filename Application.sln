@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application.csproj", "{26E89A3B-9852-4A18-96CC-1D5881FADAA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Droid", "Droid\Application.Droid.csproj", "{7C2939AF-EF86-4E26-8044-CE80EA155557}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApplication.Droid", "Droid\SampleApplication.Droid.csproj", "{7C2939AF-EF86-4E26-8044-CE80EA155557}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UITests", "UITests\Application.UITests.csproj", "{E76622ED-2233-4E17-B50D-6429988BADF7}"
 EndProject

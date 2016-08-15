@@ -49,7 +49,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Droid\Application.Droid.csproj">
       <Project>{7C2939AF-EF86-4E26-8044-CE80EA155557}</Project>
-      <Name>Application.Droid</Name>
+      <Name>SampleApplication.Droid</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
