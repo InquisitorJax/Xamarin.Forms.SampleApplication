@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Core;
+using SampleApplication.Views;
 
 namespace SampleApplication
 {

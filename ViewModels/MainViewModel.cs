@@ -1,6 +1,7 @@
 ﻿using Core;
 using Prism.Commands;
 using Prism.Events;
+using SampleApplication.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -27,6 +28,20 @@ namespace SampleApplication
             OpenSelectedSampleItemCommand = DelegateCommand.FromAsyncHandler(OpenSelectedSampleItemAsync);
             CreateSampleItemNavigationCommand = DelegateCommand.FromAsyncHandler(CreateSampleItemNavigateAsync);
             Title = "Sample Application For Xamarin Forms";
+
+            MainMenuItems = new List<MainMenuItem>();
+            MainMenuItems.Add(new MainMenuItem
+            {
+                Title = "The Flash",
+                IconSource = "flash.png",
+                ActionId = Constants.Navigation.TheFlashPage
+            });
+            MainMenuItems.Add(new MainMenuItem
+            {
+                Title = "Green Lantern",
+                IconSource = "greenlantern.png",
+                ActionId = Constants.Navigation.GreenLanternPage
+            });
         }
 
         public ICommand CreateSampleItemNavigationCommand { get; private set; }
@@ -38,6 +53,7 @@ namespace SampleApplication
             set { SetProperty(ref _listRefreshing, value); }
         }
 
+        public IList<MainMenuItem> MainMenuItems { get; private set; }
         public ICommand OpenSelectedSampleItemCommand { get; private set; }
 
         public ObservableCollection<SampleItem> SampleItems

@@ -9,10 +9,10 @@ namespace Core
     public class XFormsNavigationService : INavigationService
     {
         private Page _currentPage;
-
         private bool _isSuspended;
-        private Dictionary<Page, bool> _pageInfoList;
+        private MasterDetailPage _masterDetailPage;
 
+        private Dictionary<Page, bool> _pageInfoList;
         private Stack<IView> _viewStack;
 
         public XFormsNavigationService()
@@ -48,7 +48,10 @@ namespace Core
         public async Task GoBack()
         {
             if (_isSuspended)
+            {
+                //Logger().Info("Navigation.GoBack while suspended");
                 return;
+            }
 
             await PopCurrentPageAsync();
             if (_viewStack.Count > 0)
@@ -58,16 +61,21 @@ namespace Core
         public async Task NavigateAsync(string destination, Dictionary<string, string> args = null, bool modal = false, bool forgetCurrentPage = false)
         {
             if (_isSuspended)
+            {
+                //Logger().Info("Navigation.Navigate while suspended");
                 return;
-
+            }
             IView view = ResolveView(destination);
 
-            await ShowViewAsync(view, modal, forgetCurrentPage); //Show View first so that showing doesn't wait for state initialization
+            //await ShowViewAsync(view, modal, forgetCurrentPage); //Show View first so that showing doesn't wait for state initialization
 
             IViewModel viewModel = await ResolveViewModelAsync(destination, args);
 
+            //NOTE: Views must still load their own viewmodels - since they could be hosted in a parent view
             view.ViewModel = viewModel;
             ((Page)view).BindingContext = viewModel;
+
+            await ShowViewAsync(view, modal, forgetCurrentPage);
         }
 
         public async Task ResumeAsync()
@@ -94,12 +102,22 @@ namespace Core
             }
         }
 
+        private void MakeMasterDetailRootPage(MasterDetailPage masterDetailPage)
+        {
+            _masterDetailPage = masterDetailPage;
+            if (_masterDetailPage.Detail.GetType() != typeof(NavigationPage))
+                throw new InvalidOperationException("MasterDetail.Detail must be a navigation page");
+            Application.Current.MainPage = masterDetailPage;
+            _currentPage = masterDetailPage.Detail; //the current page is where navigation happens, so current page is the root page
+        }
+
         private void Page_Disappearing(object sender, EventArgs e)
         {
-            //NOTE: this event can also be fired from events like launching the camera - in which case the camera launch code must manually
-            //...   call Navigation.SuspendAsync() so that the view isn't unintentionally removed from the stack
             if (_isSuspended)
+            {
+                //Logger().Info("Navigation.Page_Disappearing while suspended - view not popped");
                 return;
+            }
 
             IView view = sender as IView;
 
@@ -110,7 +128,9 @@ namespace Core
                     //hard Back button was pressed, or back navigation on nav bar was pressed (ie: Navigate was not called on navigation service)
                     PopViewStack();
                     if (_viewStack.Count > 0)
+                    {
                         _currentPage = (Page)_viewStack.Peek();
+                    }
                     else
                     {
                         //TODO: Log.Error: multiple validation requests for the same view
@@ -129,16 +149,22 @@ namespace Core
                     isModal = _pageInfoList[_currentPage];
                 }
 
-                //NOTE: pop view stack befire calling popping navigation on page to cater for Page_Disappearing check
+                //NOTE: pop view stack before calling popping navigation on page to cater for Page_Disappearing check
                 PopViewStack();
+
+                var navigationPage = _currentPage;
+                if (_masterDetailPage != null)
+                {
+                    navigationPage = _masterDetailPage.Detail;
+                }
 
                 if (isModal)
                 {
-                    var page = await _currentPage.Navigation.PopModalAsync(true);
+                    var page = await navigationPage.Navigation.PopModalAsync(true);
                 }
                 else
                 {
-                    await _currentPage.Navigation.PopAsync(true);
+                    await navigationPage.Navigation.PopAsync(true);
                 }
             }
         }
@@ -150,7 +176,10 @@ namespace Core
             if (_viewStack.Count > 0 && _viewStack.Peek() == CurrentView)
             {
                 poppedView = _viewStack.Pop();
-                poppedView.ViewModel.Closing();
+                if (poppedView.ViewModel != null)
+                {
+                    poppedView.ViewModel.Closing();
+                }
             }
             if (_pageInfoList.ContainsKey(_currentPage))
             {
@@ -167,11 +196,11 @@ namespace Core
             return view;
         }
 
-        private async Task<IViewModel> ResolveViewModelAsync(string destination, Dictionary<string, string> args = null)
+        private Task<IViewModel> ResolveViewModelAsync(string destination, Dictionary<string, string> args = null)
         {
             IViewModel viewModel = CC.IoC.ResolveKeyed<IViewModel>(destination);
-            await viewModel.InitializeAsync(args);
-            return viewModel;
+            viewModel.InitializeAsync(args); //don't await initialization - run purposefully async
+            return Task.FromResult(viewModel);
         }
 
         private async Task ShowViewAsync(IView view, bool modal, bool forgetCurrentPage)
@@ -180,9 +209,17 @@ namespace Core
             _viewStack.Push(view);
             _pageInfoList.Add((Page)view, modal);
 
-            if (CurrentPage == null)
+            var masterDetailPage = view as MasterDetailPage; //NOTE: iOS - the MasterDetailPage must be the root, and the detail must be NavigationPage
+            if (masterDetailPage != null)
             {
-                //first time navigation
+                //Replace the current root page with a master detail root page
+                if (CurrentPage != null)
+                    await PopCurrentPageAsync();
+                MakeMasterDetailRootPage(masterDetailPage);
+            }
+            else if (CurrentPage == null)
+            {
+                //first time navigation - most likely Auth page if it's wasn't a master detail page
                 Application.Current.MainPage = new NavigationPage((Page)view);
             }
             else
@@ -204,7 +241,14 @@ namespace Core
                     }
                     else
                     {
-                        await CurrentPage.Navigation.PushAsync((Page)view);
+                        if (_masterDetailPage != null)
+                        {
+                            await ((NavigationPage)_masterDetailPage.Detail).Navigation.PushAsync(page);
+                        }
+                        else
+                        {
+                            await CurrentPage.Navigation.PushAsync(page);
+                        }
                     }
                 }
             }
