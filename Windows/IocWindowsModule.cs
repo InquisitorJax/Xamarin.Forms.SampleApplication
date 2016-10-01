@@ -10,6 +10,7 @@ namespace SampleApplication.Windows
             base.Load(builder);
 
             builder.RegisterType<WindowsDatabaseConnectionFactory>().As<IDatabaseConnectionFactory>().AsSelf();
+            builder.RegisterType<WindowsExceptionManager>().As<IPlatformExceptionManager>().AsSelf().SingleInstance();
         }
     }
 }

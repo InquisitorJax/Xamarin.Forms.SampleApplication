@@ -6,9 +6,15 @@
              xmlns:local="clr-namespace:SampleApplication">
   <ContentPage.ToolbarItems>
     <ToolbarItem Command="{Binding CreateSampleItemNavigationCommand}"
-                 Icon="ic_insert_dark"
                  Order="Primary"
-                 Priority="0" />
+                 Priority="0">
+      <ToolbarItem.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource"
+                    Android="ic_insert_dark.png"
+                    WinPhone="Images/ic_insert_dark.png"
+                    iOS="ic_insert_dark.png" />
+      </ToolbarItem.Icon>
+    </ToolbarItem>
   </ContentPage.ToolbarItems>
 
   <ContentPage.Content>

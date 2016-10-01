@@ -3,8 +3,13 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Menu"
-             Icon="ic_hamburger_dark.png"
              Padding="0,40,0,0">
+  <ContentPage.Icon>
+    <OnPlatform x:TypeArguments="FileImageSource"
+                Android="ic_hamburger_dark.png"
+                WinPhone="Images/ic_hamburger_dark.png"
+                iOS="ic_hamburger_dark.png" />
+  </ContentPage.Icon>
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
       <ListView x:Name="listView"
