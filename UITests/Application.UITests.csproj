@@ -39,22 +39,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AllApplications.Shared\XForms.Shared.csproj">
-      <Project>{5e590fab-76c0-4ec2-9b90-fa90c9c2b73d}</Project>
-      <Name>XForms.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Application.csproj">
-      <Project>{26e89a3b-9852-4a18-96cc-1d5881fadaa1}</Project>
-      <Name>Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Droid\SampleApplication.Droid.csproj">
-      <Project>{7C2939AF-EF86-4E26-8044-CE80EA155557}</Project>
-      <Name>SampleApplication.Droid</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="ApplicationTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -19,7 +19,8 @@ namespace Core
         {
             TimeSpan duration = TimeSpan.FromSeconds(durationInSeconds);
             var notificator = DependencyService.Get<IToastNotificator>();
-            bool tapped = await notificator.Notify(ToastNotificationType.Info, caption, message, duration);
+            var options = new NotificationOptions() { Description = message, Title = caption };
+            await notificator.Notify(options);
         }
 
         #endregion IUserNotifier implementation

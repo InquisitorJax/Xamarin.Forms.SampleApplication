@@ -3,12 +3,16 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
-      "Autofac/3.5.2": {
+      "Autofac/4.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
         "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         },
         "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "FluentValidation/6.2.1": {
@@ -332,6 +336,54 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NETStandard.Library/1.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Calendars": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.Compression.ZipFile": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Net.Http": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Timer": "4.0.1",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
+        }
+      },
       "Prism.Core/6.2.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -364,9 +416,9 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "sqlite-net-pcl/1.1.2": {
+      "sqlite-net-pcl/1.2.0": {
         "dependencies": {
-          "SQLitePCL.bundle_green": "0.9.2"
+          "SQLitePCLRaw.bundle_green": "1.0.1"
         },
         "compile": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
@@ -375,49 +427,56 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
         }
       },
-      "SQLitePCL.bundle_green/0.9.2": {
+      "SQLitePCLRaw.bundle_green/1.0.1": {
         "dependencies": {
-          "SQLitePCL.native.sqlite3.v140": "0.9.2",
-          "SQLitePCL.plugin.sqlite3.uap10.0": "0.9.2",
-          "SQLitePCL.raw": "0.9.2"
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.lib.e_sqlite3.v140": "1.0.1",
+          "SQLitePCLRaw.provider.e_sqlite3.uwp10": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         }
       },
-      "SQLitePCL.native.sqlite3.v140/0.9.2": {},
-      "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
+      "SQLitePCLRaw.core/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCL.raw/0.9.2": {
+      "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+        "runtimeTargets": {
+          "runtimes/win10-arm/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-x64/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/native/e_sqlite3.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          }
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0",
+          "SQLitePCLRaw.core": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -565,6 +624,18 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -1541,6 +1612,35 @@
           "lib/win8/_._": {}
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "lib/win8/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assetType": "runtime",
+            "rid": "aot"
+          },
+          "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.1.0"
@@ -2155,14 +2255,14 @@
           }
         }
       },
-      "Toasts.Forms.Plugin/2.0.4": {
+      "Toasts.Forms.Plugin/3.1.0": {
         "compile": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         },
         "runtime": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         }
       },
       "Xamarin.Forms/2.3.2.127": {
@@ -2181,12 +2281,16 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
-      "Autofac/3.5.2": {
+      "Autofac/4.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
         "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         },
         "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "FluentValidation/6.2.1": {
@@ -2458,6 +2562,54 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NETStandard.Library/1.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Calendars": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.Compression.ZipFile": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Net.Http": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Timer": "4.0.1",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
+        }
+      },
       "Prism.Core/6.2.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -2645,6 +2797,24 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "runtime.win.System.Console/4.0.0": {
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Console.dll": {}
+        }
+      },
       "runtime.win.System.Diagnostics.Debug/4.0.11": {
         "compile": {
           "ref/netstandard/_._": {}
@@ -2770,9 +2940,9 @@
           "runtimes/win8-arm/native/clrcompression.dll": {}
         }
       },
-      "sqlite-net-pcl/1.1.2": {
+      "sqlite-net-pcl/1.2.0": {
         "dependencies": {
-          "SQLitePCL.bundle_green": "0.9.2"
+          "SQLitePCLRaw.bundle_green": "1.0.1"
         },
         "compile": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
@@ -2781,49 +2951,45 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
         }
       },
-      "SQLitePCL.bundle_green/0.9.2": {
+      "SQLitePCLRaw.bundle_green/1.0.1": {
         "dependencies": {
-          "SQLitePCL.native.sqlite3.v140": "0.9.2",
-          "SQLitePCL.plugin.sqlite3.uap10.0": "0.9.2",
-          "SQLitePCL.raw": "0.9.2"
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.lib.e_sqlite3.v140": "1.0.1",
+          "SQLitePCLRaw.provider.e_sqlite3.uwp10": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         }
       },
-      "SQLitePCL.native.sqlite3.v140/0.9.2": {},
-      "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
+      "SQLitePCLRaw.core/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCL.raw/0.9.2": {
+      "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+        "native": {
+          "runtimes/win10-arm/native/e_sqlite3.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0",
+          "SQLitePCLRaw.core": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -2966,6 +3132,19 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "runtime.win.System.Console": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -3841,6 +4020,21 @@
           "lib/win8/_._": {}
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        }
+      },
       "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.1.0"
@@ -4413,14 +4607,14 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Toasts.Forms.Plugin/2.0.4": {
+      "Toasts.Forms.Plugin/3.1.0": {
         "compile": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         },
         "runtime": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         }
       },
       "Xamarin.Forms/2.3.2.127": {
@@ -4439,12 +4633,16 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
-      "Autofac/3.5.2": {
+      "Autofac/4.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
         "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         },
         "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "FluentValidation/6.2.1": {
@@ -4715,6 +4913,54 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NETStandard.Library/1.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Calendars": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.Compression.ZipFile": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Net.Http": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Timer": "4.0.1",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
         }
       },
       "Prism.Core/6.2.0": {
@@ -4949,6 +5195,24 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "runtime.win.System.Console/4.0.0": {
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Console.dll": {}
+        }
+      },
       "runtime.win.System.Diagnostics.Debug/4.0.11": {
         "compile": {
           "ref/netstandard/_._": {}
@@ -5067,9 +5331,9 @@
           "runtimes/win8-arm-aot/native/_._": {}
         }
       },
-      "sqlite-net-pcl/1.1.2": {
+      "sqlite-net-pcl/1.2.0": {
         "dependencies": {
-          "SQLitePCL.bundle_green": "0.9.2"
+          "SQLitePCLRaw.bundle_green": "1.0.1"
         },
         "compile": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
@@ -5078,49 +5342,45 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
         }
       },
-      "SQLitePCL.bundle_green/0.9.2": {
+      "SQLitePCLRaw.bundle_green/1.0.1": {
         "dependencies": {
-          "SQLitePCL.native.sqlite3.v140": "0.9.2",
-          "SQLitePCL.plugin.sqlite3.uap10.0": "0.9.2",
-          "SQLitePCL.raw": "0.9.2"
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.lib.e_sqlite3.v140": "1.0.1",
+          "SQLitePCLRaw.provider.e_sqlite3.uwp10": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         }
       },
-      "SQLitePCL.native.sqlite3.v140/0.9.2": {},
-      "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
+      "SQLitePCLRaw.core/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCL.raw/0.9.2": {
+      "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+        "native": {
+          "runtimes/win10-arm/native/e_sqlite3.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0",
+          "SQLitePCLRaw.core": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -5263,6 +5523,19 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "runtime.win.System.Console": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -6138,6 +6411,21 @@
           "lib/win8/_._": {}
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        }
+      },
       "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.1.0"
@@ -6710,14 +6998,14 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Toasts.Forms.Plugin/2.0.4": {
+      "Toasts.Forms.Plugin/3.1.0": {
         "compile": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         },
         "runtime": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         }
       },
       "Xamarin.Forms/2.3.2.127": {
@@ -6736,12 +7024,16 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
-      "Autofac/3.5.2": {
+      "Autofac/4.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
         "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         },
         "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "FluentValidation/6.2.1": {
@@ -7017,6 +7309,54 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NETStandard.Library/1.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Calendars": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.Compression.ZipFile": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Net.Http": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Timer": "4.0.1",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
+        }
+      },
       "Prism.Core/6.2.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -7204,6 +7544,24 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "runtime.win.System.Console/4.0.0": {
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Console.dll": {}
+        }
+      },
       "runtime.win.System.Diagnostics.Debug/4.0.11": {
         "compile": {
           "ref/netstandard/_._": {}
@@ -7334,9 +7692,9 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-pcl/1.1.2": {
+      "sqlite-net-pcl/1.2.0": {
         "dependencies": {
-          "SQLitePCL.bundle_green": "0.9.2"
+          "SQLitePCLRaw.bundle_green": "1.0.1"
         },
         "compile": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
@@ -7345,49 +7703,45 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
         }
       },
-      "SQLitePCL.bundle_green/0.9.2": {
+      "SQLitePCLRaw.bundle_green/1.0.1": {
         "dependencies": {
-          "SQLitePCL.native.sqlite3.v140": "0.9.2",
-          "SQLitePCL.plugin.sqlite3.uap10.0": "0.9.2",
-          "SQLitePCL.raw": "0.9.2"
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.lib.e_sqlite3.v140": "1.0.1",
+          "SQLitePCLRaw.provider.e_sqlite3.uwp10": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         }
       },
-      "SQLitePCL.native.sqlite3.v140/0.9.2": {},
-      "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
+      "SQLitePCLRaw.core/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCL.raw/0.9.2": {
+      "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+        "native": {
+          "runtimes/win10-x64/native/e_sqlite3.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0",
+          "SQLitePCLRaw.core": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -7530,6 +7884,19 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "runtime.win.System.Console": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -8405,6 +8772,21 @@
           "lib/win8/_._": {}
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        }
+      },
       "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.1.0"
@@ -8977,14 +9359,14 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Toasts.Forms.Plugin/2.0.4": {
+      "Toasts.Forms.Plugin/3.1.0": {
         "compile": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         },
         "runtime": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         }
       },
       "Xamarin.Forms/2.3.2.127": {
@@ -9003,12 +9385,16 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
-      "Autofac/3.5.2": {
+      "Autofac/4.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
         "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         },
         "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "FluentValidation/6.2.1": {
@@ -9283,6 +9669,54 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "NETStandard.Library/1.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Calendars": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.Compression.ZipFile": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Net.Http": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Timer": "4.0.1",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
         }
       },
       "Prism.Core/6.2.0": {
@@ -9517,6 +9951,24 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "runtime.win.System.Console/4.0.0": {
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Console.dll": {}
+        }
+      },
       "runtime.win.System.Diagnostics.Debug/4.0.11": {
         "compile": {
           "ref/netstandard/_._": {}
@@ -9640,9 +10092,9 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-pcl/1.1.2": {
+      "sqlite-net-pcl/1.2.0": {
         "dependencies": {
-          "SQLitePCL.bundle_green": "0.9.2"
+          "SQLitePCLRaw.bundle_green": "1.0.1"
         },
         "compile": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
@@ -9651,49 +10103,45 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
         }
       },
-      "SQLitePCL.bundle_green/0.9.2": {
+      "SQLitePCLRaw.bundle_green/1.0.1": {
         "dependencies": {
-          "SQLitePCL.native.sqlite3.v140": "0.9.2",
-          "SQLitePCL.plugin.sqlite3.uap10.0": "0.9.2",
-          "SQLitePCL.raw": "0.9.2"
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.lib.e_sqlite3.v140": "1.0.1",
+          "SQLitePCLRaw.provider.e_sqlite3.uwp10": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         }
       },
-      "SQLitePCL.native.sqlite3.v140/0.9.2": {},
-      "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
+      "SQLitePCLRaw.core/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCL.raw/0.9.2": {
+      "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+        "native": {
+          "runtimes/win10-x64/native/e_sqlite3.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0",
+          "SQLitePCLRaw.core": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -9836,6 +10284,19 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "runtime.win.System.Console": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -10711,6 +11172,21 @@
           "lib/win8/_._": {}
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        }
+      },
       "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.1.0"
@@ -11283,14 +11759,14 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Toasts.Forms.Plugin/2.0.4": {
+      "Toasts.Forms.Plugin/3.1.0": {
         "compile": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         },
         "runtime": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         }
       },
       "Xamarin.Forms/2.3.2.127": {
@@ -11309,12 +11785,16 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
-      "Autofac/3.5.2": {
+      "Autofac/4.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
         "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         },
         "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "FluentValidation/6.2.1": {
@@ -11590,6 +12070,54 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NETStandard.Library/1.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Calendars": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.Compression.ZipFile": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Net.Http": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Timer": "4.0.1",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
+        }
+      },
       "Prism.Core/6.2.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -11777,6 +12305,24 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "runtime.win.System.Console/4.0.0": {
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Console.dll": {}
+        }
+      },
       "runtime.win.System.Diagnostics.Debug/4.0.11": {
         "compile": {
           "ref/netstandard/_._": {}
@@ -11907,9 +12453,9 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-pcl/1.1.2": {
+      "sqlite-net-pcl/1.2.0": {
         "dependencies": {
-          "SQLitePCL.bundle_green": "0.9.2"
+          "SQLitePCLRaw.bundle_green": "1.0.1"
         },
         "compile": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
@@ -11918,49 +12464,45 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
         }
       },
-      "SQLitePCL.bundle_green/0.9.2": {
+      "SQLitePCLRaw.bundle_green/1.0.1": {
         "dependencies": {
-          "SQLitePCL.native.sqlite3.v140": "0.9.2",
-          "SQLitePCL.plugin.sqlite3.uap10.0": "0.9.2",
-          "SQLitePCL.raw": "0.9.2"
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.lib.e_sqlite3.v140": "1.0.1",
+          "SQLitePCLRaw.provider.e_sqlite3.uwp10": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         }
       },
-      "SQLitePCL.native.sqlite3.v140/0.9.2": {},
-      "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
+      "SQLitePCLRaw.core/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCL.raw/0.9.2": {
+      "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+        "native": {
+          "runtimes/win10-x86/native/e_sqlite3.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0",
+          "SQLitePCLRaw.core": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -12103,6 +12645,19 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "runtime.win.System.Console": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -12978,6 +13533,21 @@
           "lib/win8/_._": {}
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        }
+      },
       "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.1.0"
@@ -13550,14 +14120,14 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Toasts.Forms.Plugin/2.0.4": {
+      "Toasts.Forms.Plugin/3.1.0": {
         "compile": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         },
         "runtime": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         }
       },
       "Xamarin.Forms/2.3.2.127": {
@@ -13576,12 +14146,16 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
-      "Autofac/3.5.2": {
+      "Autofac/4.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.ComponentModel": "4.0.1"
+        },
         "compile": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         },
         "runtime": {
-          "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll": {}
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "FluentValidation/6.2.1": {
@@ -13858,6 +14432,54 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "NETStandard.Library/1.6.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.AppContext": "4.1.0",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Calendars": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.IO.Compression.ZipFile": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Net.Http": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.ObjectModel": "4.0.12",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Timer": "4.0.1",
+          "System.Xml.ReaderWriter": "4.0.11",
+          "System.Xml.XDocument": "4.0.11"
+        }
+      },
       "Prism.Core/6.2.0": {
         "compile": {
           "lib/wpa81/Prism.dll": {}
@@ -14090,6 +14712,24 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "runtime.win.System.Console/4.0.0": {
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Console.dll": {}
+        }
+      },
       "runtime.win.System.Diagnostics.Debug/4.0.11": {
         "compile": {
           "ref/netstandard/_._": {}
@@ -14213,9 +14853,9 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-pcl/1.1.2": {
+      "sqlite-net-pcl/1.2.0": {
         "dependencies": {
-          "SQLitePCL.bundle_green": "0.9.2"
+          "SQLitePCLRaw.bundle_green": "1.0.1"
         },
         "compile": {
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
@@ -14224,49 +14864,45 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll": {}
         }
       },
-      "SQLitePCL.bundle_green/0.9.2": {
+      "SQLitePCLRaw.bundle_green/1.0.1": {
         "dependencies": {
-          "SQLitePCL.native.sqlite3.v140": "0.9.2",
-          "SQLitePCL.plugin.sqlite3.uap10.0": "0.9.2",
-          "SQLitePCL.raw": "0.9.2"
+          "SQLitePCLRaw.core": "1.0.1",
+          "SQLitePCLRaw.lib.e_sqlite3.v140": "1.0.1",
+          "SQLitePCLRaw.provider.e_sqlite3.uwp10": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.batteries.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.batteries_green.dll": {}
         }
       },
-      "SQLitePCL.native.sqlite3.v140/0.9.2": {},
-      "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
+      "SQLitePCLRaw.core/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCL.raw/0.9.2": {
+      "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+        "native": {
+          "runtimes/win10-x86/native/e_sqlite3.dll": {}
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
         "dependencies": {
-          "System.Collections": "4.0.10",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Resources.ResourceManager": "4.0.0",
-          "System.Runtime": "4.0.20",
-          "System.Runtime.InteropServices": "4.0.20",
-          "System.Text.Encoding": "4.0.10"
+          "NETStandard.Library": "1.6.0",
+          "SQLitePCLRaw.core": "1.0.1"
         },
         "compile": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         },
         "runtime": {
-          "lib/uap10.0/SQLitePCL.raw.dll": {}
+          "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -14409,6 +15045,19 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "runtime.win.System.Console": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -15284,6 +15933,21 @@
           "lib/win8/_._": {}
         }
       },
+      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        },
+        "runtime": {
+          "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll": {}
+        }
+      },
       "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
         "dependencies": {
           "System.Runtime": "4.1.0"
@@ -15856,14 +16520,14 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Toasts.Forms.Plugin/2.0.4": {
+      "Toasts.Forms.Plugin/3.1.0": {
         "compile": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         },
         "runtime": {
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll": {},
-          "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
+          "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll": {},
+          "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll": {}
         }
       },
       "Xamarin.Forms/2.3.2.127": {
@@ -15883,16 +16547,17 @@
     }
   },
   "libraries": {
-    "Autofac/3.5.2": {
-      "sha512": "pGR5LjY8T/16x6SkJNd7u6EjQnE4C7JS0BZJ7Yl7pt313gIUZ/2ZnPSOIM5eaIA7ArxaudlyyLvAT4ayX5UJ/A==",
+    "Autofac/4.1.1": {
+      "sha512": "C0O06dJ1/WAYr4CZzBu3RCs2GZuR3G8PQFqgxa3PP4jDMUb9//jgL2ONvF06qxPsC0UflkBS55wmd7C5oaEsEg==",
       "type": "package",
+      "path": "Autofac/4.1.1",
       "files": [
-        "Autofac.3.5.2.nupkg.sha512",
+        "Autofac.4.1.1.nupkg.sha512",
         "Autofac.nuspec",
-        "lib/net40/Autofac.dll",
-        "lib/net40/Autofac.xml",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.dll",
-        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Autofac.xml"
+        "lib/net45/Autofac.dll",
+        "lib/net45/Autofac.xml",
+        "lib/netstandard1.1/Autofac.dll",
+        "lib/netstandard1.1/Autofac.xml"
       ]
     },
     "FluentValidation/6.2.1": {
@@ -16261,6 +16926,17 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "NETStandard.Library/1.6.0": {
+      "sha512": "ypsCvIdCZ4IoYASJHt6tF2fMo7N30NLgV1EbmC+snO490OMl9FvVxmumw14rhReWU3j3g7BYudG6YCrchwHJlA==",
+      "type": "package",
+      "path": "NETStandard.Library/1.6.0",
+      "files": [
+        "NETStandard.Library.1.6.0.nupkg.sha512",
+        "NETStandard.Library.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt"
       ]
     },
     "Prism.Core/6.2.0": {
@@ -16934,6 +17610,21 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll"
       ]
     },
+    "runtime.win.System.Console/4.0.0": {
+      "sha512": "xiO5b50KA3Z7BOfWK7GLYLN2dfJa/BoDyI0XhNyOwXvAXWvubDyAF61YMnWl/q+j2WopSAXGo12kTpjxmlyCyg==",
+      "type": "package",
+      "path": "runtime.win.System.Console/4.0.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "ref/netstandard/_._",
+        "runtime.win.System.Console.4.0.0.nupkg.sha512",
+        "runtime.win.System.Console.nuspec",
+        "runtimes/win/lib/net/_._",
+        "runtimes/win/lib/netcore50/System.Console.dll",
+        "runtimes/win/lib/netstandard1.3/System.Console.dll"
+      ]
+    },
     "runtime.win.System.Diagnostics.Debug/4.0.11": {
       "sha512": "q8Fm954ezFLfmG0tHNUmsNy+qaEjWtWqYhWh3cGSVjtJwkcBsfigWCh+fdaIVZ9K7m+6lgb3ElL2BBU6G+RijA==",
       "type": "package",
@@ -17195,77 +17886,91 @@
         "runtimes/win8-arm/native/clrcompression.dll"
       ]
     },
-    "sqlite-net-pcl/1.1.2": {
-      "sha512": "pN7deFk+OGQBsFK3xRuEV7mMhX1UjOuGMGhpJg9cSkC0DGZwlbdGXYdB9kov6sAZO41Td92lJxSN36IjhTWMTQ==",
+    "sqlite-net-pcl/1.2.0": {
+      "sha512": "ivI74aAxrOxJJSAYgOpD4XcBli79FGQH3LkL2C+A4Qoc4FclRCTS/5Jr3w5cpn25auzOu8rYXUzyy8eAbaYI3Q==",
       "type": "package",
+      "path": "sqlite-net-pcl/1.2.0",
       "files": [
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.dll.mdb",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLite-net.xml",
-        "sqlite-net-pcl.1.1.2.nupkg.sha512",
+        "sqlite-net-pcl.1.2.0.nupkg.sha512",
         "sqlite-net-pcl.nuspec"
       ]
     },
-    "SQLitePCL.bundle_green/0.9.2": {
-      "sha512": "1JW/bzoRuZRaF/IvOAgOf7UT9H3jHwireRhjUAlKsftGYeF7uV4WFNwFwevciHmC6q1yz5uvw3GWTA2ec35C7A==",
+    "SQLitePCLRaw.bundle_green/1.0.1": {
+      "sha512": "OzRbh0SBB1c+Kwfm/oHsWT2eAP2XouRVr6hWDg/ckhzmigCmQm/5MooNd8KotiiQtIc8ukYqKL8hfX6NOwX2UQ==",
       "type": "package",
+      "path": "SQLitePCLRaw.bundle_green/1.0.1",
       "files": [
-        "SQLitePCL.bundle_green.0.9.2.nupkg.sha512",
-        "SQLitePCL.bundle_green.nuspec",
-        "lib/MonoAndroid/SQLitePCL.batteries.dll",
-        "lib/net45/SQLitePCL.batteries.dll",
-        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCL.batteries.dll",
-        "lib/uap10.0/SQLitePCL.batteries.dll",
-        "lib/win81/SQLitePCL.batteries.dll",
-        "lib/wpa81/SQLitePCL.batteries.dll"
+        "SQLitePCLRaw.bundle_green.1.0.1.nupkg.sha512",
+        "SQLitePCLRaw.bundle_green.nuspec",
+        "build/wp8/SQLitePCLRaw.bundle_green.targets",
+        "build/wp80/arm/SQLitePCLRaw.batteries_green.dll",
+        "build/wp80/x86/SQLitePCLRaw.batteries_green.dll",
+        "lib/MonoAndroid/SQLitePCLRaw.batteries_green.dll",
+        "lib/MonoTouch/SQLitePCLRaw.batteries_green.dll",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/net35/SQLitePCLRaw.batteries_green.dll",
+        "lib/net40/SQLitePCLRaw.batteries_green.dll",
+        "lib/net45/SQLitePCLRaw.batteries_green.dll",
+        "lib/netcoreapp/SQLitePCLRaw.batteries_green.dll",
+        "lib/netstandard1.1/SQLitePCLRaw.batteries_green.dll",
+        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_green.dll",
+        "lib/uap10.0/SQLitePCLRaw.batteries_green.dll",
+        "lib/win8/SQLitePCLRaw.batteries_green.dll",
+        "lib/win81/SQLitePCLRaw.batteries_green.dll",
+        "lib/wp8/_._",
+        "lib/wpa81/SQLitePCLRaw.batteries_green.dll"
       ]
     },
-    "SQLitePCL.native.sqlite3.v140/0.9.2": {
-      "sha512": "QqPO5GDWiQ5NpZwP5szwx1w4sm5u5bc6bpzPUBLoam9+Up4qQhLTZa+YAS5w3Dhq1vIdbHC/fG2GBbF2iIxV2g==",
+    "SQLitePCLRaw.core/1.0.1": {
+      "sha512": "ih45uNC9JVk3xxkxuy1vGl6Ukn6KJkOeEXQcMoxCaGg4OrcYZQFcm9/Sq5WTElGZJ/LynpV6/OrIaLqrmsC8eQ==",
       "type": "package",
+      "path": "SQLitePCLRaw.core/1.0.1",
       "files": [
-        "SQLitePCL.native.sqlite3.v140.0.9.2.nupkg.sha512",
-        "SQLitePCL.native.sqlite3.v140.nuspec",
-        "build/SQLitePCL.native.sqlite3.v140.targets",
-        "build/native/sqlite3/v140/arm/esqlite3.dll",
-        "build/native/sqlite3/v140/x64/esqlite3.dll",
-        "build/native/sqlite3/v140/x86/esqlite3.dll"
+        "SQLitePCLRaw.core.1.0.1.nupkg.sha512",
+        "SQLitePCLRaw.core.nuspec",
+        "lib/MonoAndroid/SQLitePCLRaw.core.dll",
+        "lib/MonoTouch/SQLitePCLRaw.core.dll",
+        "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/net35/SQLitePCLRaw.core.dll",
+        "lib/net40/SQLitePCLRaw.core.dll",
+        "lib/net45/SQLitePCLRaw.core.dll",
+        "lib/netstandard1.0/SQLitePCLRaw.core.dll",
+        "lib/netstandard1.1/SQLitePCLRaw.core.dll",
+        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
+        "lib/uap10.0/SQLitePCLRaw.core.dll",
+        "lib/win8/SQLitePCLRaw.core.dll",
+        "lib/win81/SQLitePCLRaw.core.dll",
+        "lib/wpa81/SQLitePCLRaw.core.dll"
       ]
     },
-    "SQLitePCL.plugin.sqlite3.uap10.0/0.9.2": {
-      "sha512": "u2L2a6LF9mqn7q8hBTh263JoMM6K1YXtjnRf9K/eFfPMTr/UX6ye4boOG3KL2BYY8N8Nn6zznShs56T0MJfRCA==",
+    "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1": {
+      "sha512": "CLefWn71MamflDwflpXGJetsBJHI7Vpm4/4slTRtBVeJ6YOqrmY0oJCWKulQsITKYdJXjJhYWM4wy8Yqe7eaUA==",
       "type": "package",
+      "path": "SQLitePCLRaw.lib.e_sqlite3.v140/1.0.1",
       "files": [
-        "SQLitePCL.plugin.sqlite3.uap10.0.0.9.2.nupkg.sha512",
-        "SQLitePCL.plugin.sqlite3.uap10.0.nuspec",
-        "lib/uap10.0/SQLitePCLPlugin_esqlite3.dll"
+        "SQLitePCLRaw.lib.e_sqlite3.v140.1.0.1.nupkg.sha512",
+        "SQLitePCLRaw.lib.e_sqlite3.v140.nuspec",
+        "build/SQLitePCLRaw.lib.e_sqlite3.v140.targets",
+        "runtimes/win10-arm/native/e_sqlite3.dll",
+        "runtimes/win10-x64/native/e_sqlite3.dll",
+        "runtimes/win10-x86/native/e_sqlite3.dll"
       ]
     },
-    "SQLitePCL.raw/0.9.2": {
-      "sha512": "C6rPoSZcBGuBiiGXvxECliEhtSWt9PT6gEwWaJhiz26WJcSqqWGmJaIzbjyEjQj09W80/sBzZZ9YqYbNmybuLw==",
+    "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1": {
+      "sha512": "nxh13kxShb1zfuyx+OfLCngIotMBu8YRFo+uCUPQeEz9hohQctnt/w6Zh5ZEjZjnT3dcQ5mgX94Cii1TE3NdlQ==",
       "type": "package",
+      "path": "SQLitePCLRaw.provider.e_sqlite3.uwp10/1.0.1",
       "files": [
-        "SQLitePCL.raw.0.9.2.nupkg.sha512",
-        "SQLitePCL.raw.nuspec",
-        "lib/MonoAndroid/SQLitePCL.raw.dll",
-        "lib/MonoTouch/SQLitePCL.raw.dll",
-        "lib/Xamarin.iOS10/SQLitePCL.raw.dll",
-        "lib/net35/SQLitePCL.raw.dll",
-        "lib/net40/SQLitePCL.raw.dll",
-        "lib/net45/SQLitePCL.raw.dll",
-        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCL.raw.dll",
-        "lib/portable-net45+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCL.raw.dll",
-        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCL.raw.dll",
-        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCL.raw.dll",
-        "lib/portable-net45+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCL.raw.dll",
-        "lib/uap10.0/SQLitePCL.raw.dll",
-        "lib/uap10.0/SQLitePCL.raw.pri",
-        "lib/win8/SQLitePCL.raw.dll",
-        "lib/win8/SQLitePCL.raw.pri",
-        "lib/win81/SQLitePCL.raw.dll",
-        "lib/win81/SQLitePCL.raw.pri",
-        "lib/wpa81/SQLitePCL.raw.dll",
-        "lib/wpa81/SQLitePCL.raw.pri"
+        "SQLitePCLRaw.provider.e_sqlite3.uwp10.1.0.1.nupkg.sha512",
+        "SQLitePCLRaw.provider.e_sqlite3.uwp10.nuspec",
+        "lib/uap10.0/SQLitePCLRaw.provider.e_sqlite3.dll"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -17741,6 +18446,42 @@
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Console/4.0.0": {
+      "sha512": "qSKUSOIiYA/a0g5XXdxFcUFmv1hNICBD7QZ0QhGYVipPIhvpiydY8VZqr1thmCXvmn8aipMg64zuanB4eotK9A==",
+      "type": "package",
+      "path": "System.Console/4.0.0",
+      "files": [
+        "System.Console.4.0.0.nupkg.sha512",
+        "System.Console.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Console.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Console.dll",
+        "ref/netstandard1.3/System.Console.dll",
+        "ref/netstandard1.3/System.Console.xml",
+        "ref/netstandard1.3/de/System.Console.xml",
+        "ref/netstandard1.3/es/System.Console.xml",
+        "ref/netstandard1.3/fr/System.Console.xml",
+        "ref/netstandard1.3/it/System.Console.xml",
+        "ref/netstandard1.3/ja/System.Console.xml",
+        "ref/netstandard1.3/ko/System.Console.xml",
+        "ref/netstandard1.3/ru/System.Console.xml",
+        "ref/netstandard1.3/zh-hans/System.Console.xml",
+        "ref/netstandard1.3/zh-hant/System.Console.xml",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
@@ -20335,6 +21076,38 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+      "sha512": "hWPhJxc453RCa8Z29O91EmfGeZIHX1ZH2A8L6lYQVSaKzku2DfArSfMEb1/MYYzPQRJZeu0c9dmYeJKxW5Fgng==",
+      "type": "package",
+      "path": "System.Runtime.InteropServices.RuntimeInformation/4.0.0",
+      "files": [
+        "System.Runtime.InteropServices.RuntimeInformation.4.0.0.nupkg.sha512",
+        "System.Runtime.InteropServices.RuntimeInformation.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/win8/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/wpa81/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/win/lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/win/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "runtimes/win/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll"
+      ]
+    },
     "System.Runtime.InteropServices.WindowsRuntime/4.0.1": {
       "sha512": "oIIXM4w2y3MiEZEXA+RTtfPV+SZ1ymbFdWppHlUciNdNIL0/Uo3HW9q9iN2O7T7KUmRdvjA7C2Gv4exAyW4zEQ==",
       "type": "package",
@@ -22073,17 +22846,13 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
-    "Toasts.Forms.Plugin/2.0.4": {
-      "sha512": "fI0Ue27SGRYpN4l34rpapdmVmG5zyPxQRaVZMcvNYUWInhLt/mb47KOBtql7rUgUGu+xI1H7r/qr06J334hoiQ==",
+    "Toasts.Forms.Plugin/3.1.0": {
+      "sha512": "Bf73MjHryIgGSsI4x/0dhkMamqphb5aTtA/d3brpp7kAX1Qv0f4UJsT7JcOgqknT1gJIX7lXQhghNpVr6nd0Aw==",
       "type": "package",
+      "path": "Toasts.Forms.Plugin/3.1.0",
       "files": [
-        "Toasts.Forms.Plugin.2.0.4.nupkg.sha512",
+        "Toasts.Forms.Plugin.3.1.0.nupkg.sha512",
         "Toasts.Forms.Plugin.nuspec",
-        "content/portable-netcore451+wpa81/FrameStyle.xaml",
-        "content/portable-netcore451+wpa81/Icons/error.png",
-        "content/portable-netcore451+wpa81/Icons/info.png",
-        "content/portable-netcore451+wpa81/Icons/success.png",
-        "content/portable-netcore451+wpa81/Icons/warning.png",
         "lib/MonoAndroid10/Toasts.Forms.Plugin.Abstractions.dll",
         "lib/MonoAndroid10/Toasts.Forms.Plugin.Abstractions.pdb",
         "lib/MonoAndroid10/Toasts.Forms.Plugin.Droid.dll",
@@ -22091,16 +22860,16 @@
         "lib/Xamarin.iOS10/Toasts.Forms.Plugin.Abstractions.dll",
         "lib/Xamarin.iOS10/Toasts.Forms.Plugin.Abstractions.pdb",
         "lib/Xamarin.iOS10/Toasts.Forms.Plugin.iOS.dll",
-        "lib/portable-net45+wp8+win8+wpa81+netcore451+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Toasts.Forms.Plugin.Abstractions.dll",
-        "lib/portable-net45+wp8+win8+wpa81+netcore451+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Toasts.Forms.Plugin.Abstractions.pdb",
+        "lib/netstandard1.3/Toasts.Forms.Plugin.Abstractions.dll",
+        "lib/netstandard1.3/Toasts.Forms.Plugin.Abstractions.pdb",
         "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.dll",
         "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.Abstractions.pdb",
         "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll",
         "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.pdb",
-        "lib/wp8/Toasts.Forms.Plugin.Abstractions.dll",
-        "lib/wp8/Toasts.Forms.Plugin.Abstractions.pdb",
-        "lib/wp8/Toasts.Forms.Plugin.WindowsPhone.dll",
-        "lib/wp8/Toasts.Forms.Plugin.WindowsPhone.pdb"
+        "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.dll",
+        "lib/uap10.0/Toasts.Forms.Plugin.Abstractions.pdb",
+        "lib/uap10.0/Toasts.Forms.Plugin.UWP.dll",
+        "lib/uap10.0/Toasts.Forms.Plugin.UWP.pdb"
       ]
     },
     "Xamarin.Forms/2.3.2.127": {
@@ -22311,13 +23080,13 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Autofac >= 3.5.2",
+      "Autofac >= 4.1.1",
       "FluentValidation >= 6.2.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
       "Prism.Core >= 6.2.0",
-      "Toasts.Forms.Plugin >= 2.0.4",
+      "Toasts.Forms.Plugin >= 3.1.0",
       "Xamarin.Forms >= 2.3.2.127",
-      "sqlite-net-pcl >= 1.1.2"
+      "sqlite-net-pcl >= 1.2.0"
     ],
     "UAP,Version=v10.0": []
   }
