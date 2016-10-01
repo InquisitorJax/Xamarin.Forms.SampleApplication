@@ -12,7 +12,7 @@
         <OnPlatform x:TypeArguments="FileImageSource"
                     Android="ic_insert_dark.png"
                     WinPhone="Images/ic_insert_dark.png"
-                    iOS="ic_insert_dark.png" />
+                    iOS="ic_insert.png" />
       </ToolbarItem.Icon>
     </ToolbarItem>
   </ContentPage.ToolbarItems>

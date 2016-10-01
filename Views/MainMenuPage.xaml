@@ -8,7 +8,7 @@
     <OnPlatform x:TypeArguments="FileImageSource"
                 Android="ic_hamburger_dark.png"
                 WinPhone="Images/ic_hamburger_dark.png"
-                iOS="ic_hamburger_dark.png" />
+                iOS="ic_hamburger.png" />
   </ContentPage.Icon>
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
