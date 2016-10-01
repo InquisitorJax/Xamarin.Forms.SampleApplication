@@ -2165,7 +2165,7 @@
           "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.1.114": {
+      "Xamarin.Forms/2.3.2.127": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -4423,7 +4423,7 @@
           "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.1.114": {
+      "Xamarin.Forms/2.3.2.127": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -6720,7 +6720,7 @@
           "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.1.114": {
+      "Xamarin.Forms/2.3.2.127": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -8987,7 +8987,7 @@
           "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.1.114": {
+      "Xamarin.Forms/2.3.2.127": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -11293,7 +11293,7 @@
           "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.1.114": {
+      "Xamarin.Forms/2.3.2.127": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -13560,7 +13560,7 @@
           "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.1.114": {
+      "Xamarin.Forms/2.3.2.127": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -15866,7 +15866,7 @@
           "lib/portable-netcore451+wpa81/Toasts.Forms.Plugin.WinRT.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.1.114": {
+      "Xamarin.Forms/2.3.2.127": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -22103,11 +22103,12 @@
         "lib/wp8/Toasts.Forms.Plugin.WindowsPhone.pdb"
       ]
     },
-    "Xamarin.Forms/2.3.1.114": {
-      "sha512": "2J3VK4EIFCeeorP0QrHA0Wnf4D4EvvMyyfOYtEvMIIrD7w47+v48zHkVGam7u85lSdMxngx4B523uYmHo24TaA==",
+    "Xamarin.Forms/2.3.2.127": {
+      "sha512": "NYH2p6Z2QGrRZpRXSiLqtapqlsx11pkViEIjDUQFDvsMCZbvsipDXOWjV9sXTrruXTdkNZ24Nsw0lEG0jVRMjA==",
       "type": "package",
+      "path": "Xamarin.Forms/2.3.2.127",
       "files": [
-        "Xamarin.Forms.2.3.1.114.nupkg.sha512",
+        "Xamarin.Forms.2.3.2.127.nupkg.sha512",
         "Xamarin.Forms.nuspec",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/ICSharpCode.Decompiler.dll",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/ICSharpCode.NRefactory.CSharp.dll",
@@ -22259,6 +22260,7 @@
         "lib/uap10.0/Xamarin.Forms.Core.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP.pri",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/AutoSuggestStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsTextBoxStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControl.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Properties/Xamarin.Forms.Platform.UAP.rd.xml",
@@ -22314,7 +22316,7 @@
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
       "Prism.Core >= 6.2.0",
       "Toasts.Forms.Plugin >= 2.0.4",
-      "Xamarin.Forms >= 2.3.1.114",
+      "Xamarin.Forms >= 2.3.2.127",
       "sqlite-net-pcl >= 1.1.2"
     ],
     "UAP,Version=v10.0": []
