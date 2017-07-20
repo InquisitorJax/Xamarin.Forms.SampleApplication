@@ -21,7 +21,7 @@ namespace SampleApplication
         {
             _repository = repository;
             _validator = validator;
-            SaveItemCommand = DelegateCommand.FromAsyncHandler(SaveItemAsync);
+            SaveItemCommand = new DelegateCommand(SaveItem);
         }
 
         public SampleItem Model
@@ -55,6 +55,11 @@ namespace SampleApplication
                 };
                 _isNewModel = true;
             }
+        }
+
+        private async void SaveItem()
+        {
+            await SaveItemAsync();
         }
 
         private async Task SaveItemAsync()

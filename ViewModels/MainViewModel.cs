@@ -24,9 +24,9 @@ namespace SampleApplication
         public MainViewModel(IRepository repository)
         {
             _repository = repository;
-            FetchSampleItemsCommand = DelegateCommand.FromAsyncHandler(FetchSampleItemsAsync);
-            OpenSelectedSampleItemCommand = DelegateCommand.FromAsyncHandler(OpenSelectedSampleItemAsync);
-            CreateSampleItemNavigationCommand = DelegateCommand.FromAsyncHandler(CreateSampleItemNavigateAsync);
+            FetchSampleItemsCommand = new DelegateCommand(FetchSampleItems);
+            OpenSelectedSampleItemCommand = new DelegateCommand(OpenSelectedSampleItem);
+            CreateSampleItemNavigationCommand = new DelegateCommand(CreateSampleItemNavigate);
             Title = "Sample Application For Xamarin Forms";
 
             MainMenuItems = new List<MainMenuItem>();
@@ -81,9 +81,14 @@ namespace SampleApplication
             await FetchSampleItemsAsync();
         }
 
-        private async Task CreateSampleItemNavigateAsync()
+        private async void CreateSampleItemNavigate()
         {
             await Navigation.NavigateAsync(Constants.Navigation.ItemPage);
+        }
+
+        private async void FetchSampleItems()
+        {
+            await FetchSampleItemsAsync();
         }
 
         private async Task FetchSampleItemsAsync()
@@ -115,6 +120,11 @@ namespace SampleApplication
         private void OnSampleItemUpdated(ModelUpdatedMessageResult<SampleItem> updateResult)
         {
             SampleItems.UpdateCollection(updateResult.UpdatedModel, updateResult.UpdateEvent);
+        }
+
+        private async void OpenSelectedSampleItem()
+        {
+            await OpenSelectedSampleItemAsync();
         }
 
         private async Task OpenSelectedSampleItemAsync()
